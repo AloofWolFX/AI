@@ -1,4 +1,4 @@
-# Satori-7B-Round2-Gradio
+# Satori-7B-Round2-WebUI
 
 Satori-7B-Round2 是一个专注于数学问题求解的推理模型。
 
