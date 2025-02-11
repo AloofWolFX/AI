@@ -2,7 +2,7 @@
 
 Satori-7B-Round2 是一个专注于数学问题求解的推理模型。
 
-- **HuggingFace 仓库**：<https://huggingface.co/Satori-reasoning>
+- **HuggingFace 仓库**：<https://huggingface.co/Satori-reasoning/Satori-7B-Round2>
 
 基于 Satori-7B-Round2 推理模型和 Gradio API 提供了一个友好的 Web 界面，方便快速部署和体验模型的推理能力。
 
