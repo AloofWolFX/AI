@@ -2,13 +2,31 @@ import os
 from tqdm import tqdm
 import torch
 from vllm import LLM, SamplingParams
+from huggingface_hub import snapshot_download
+
+# 模型配置
+model_name = "Satori-reasoning/Satori-7B-Round2"
+local_path = os.path.join(os.path.expanduser(
+    "~"), "model", "HuggingFace")
+
+# 检查模型是否已下载，如果没有则下载
+if not os.path.exists(os.path.join(local_path, model_name)):
+    print(f"正在下载模型 {model_name} 到 {local_path}...")
+    snapshot_download(
+        repo_id=model_name,
+        local_dir=os.path.join(local_path, model_name),
+        local_dir_use_symlinks=False
+    )
+    print("模型下载完成！")
+else:
+    print(f"模型已存在于 {local_path}，跳过下载")
 
 # 全局LLM实例
-model_path = "Satori-reasoning/Satori-7B-Round2"
 llm = LLM(
-    model=model_path,
+    model=model_name,
     trust_remote_code=True,
     tensor_parallel_size=1,
+    download_dir=local_path
 )
 
 
@@ -28,5 +46,4 @@ def generate(question_list):
 
 def prepare_prompt(question, history=None):
     # 添加当前问题
-    prompt = f"<|im_start|>user\nSolve the following math problem efficiently and clearly.\nPlease reason step by step, and put your final answer within \\boxed{{}}\nProblem: {question}<|im_end|>\n<|im_start|>assistant\n"
-    return prompt
+    prompt = f"
