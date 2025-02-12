@@ -6,8 +6,8 @@ from huggingface_hub import snapshot_download
 
 # 模型配置
 model_name = "Satori-reasoning/Satori-7B-Round2"
-local_path = os.path.join(os.path.expanduser(
-    "~"), "model", "HuggingFace")
+local_path = os.path.join(os.path.abspath(
+    "."), "model", "HuggingFace")
 
 # 检查模型是否已下载，如果没有则下载
 if not os.path.exists(os.path.join(local_path, model_name)):
@@ -46,4 +46,5 @@ def generate(question_list):
 
 def prepare_prompt(question, history=None):
     # 添加当前问题
-    prompt = f"
+    prompt = f"请解答以下数学问题：\n{question}\n\n请用严谨的数学推理过程来解答这个问题，并在最后用\\boxed{{}}标注最终答案。"
+    return prompt
