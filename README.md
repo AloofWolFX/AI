@@ -42,9 +42,38 @@ pip install torch vllm gradio tqdm
 ```
 
 5. 运行程序：
+
+你可以通过以下方式启动应用：
+
+- 默认本地访问：
 ```bash
 python gradio_app.py
 ```
+
+- 自定义端口：
+```bash
+python gradio_app.py --port 7860
+```
+
+- 允许公网访问：
+```bash
+python gradio_app.py --share
+```
+
+- 自定义主机地址：
+```bash
+python gradio_app.py --host 0.0.0.0
+```
+
+- 组合多个参数：
+```bash
+python gradio_app.py --share --host 0.0.0.0 --port 7860
+```
+
+默认配置：
+- 主机地址：127.0.0.1
+- 端口：7860
+- 仅允许本地访问
 
 程序会自动帮你下载模型文件，下载完成后会自动启动推理引擎和 Gradio App。最终会输出 Gradio App 的访问地址，大致如下：
 ```text

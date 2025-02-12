@@ -73,6 +73,18 @@ def create_interface():
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description='启动Satori-7B数学问题求解器')
+    parser.add_argument('--share', action='store_true',
+                        help='是否允许公网访问（默认仅允许本地访问）')
+    parser.add_argument('--host', type=str, default='127.0.0.1',
+                        help='服务器监听地址（默认：127.0.0.1）')
+    parser.add_argument('--port', type=int, default=7860,
+                        help='服务器监听端口（默认：7860）')
+    args = parser.parse_args()
+
     demo = create_interface()
     demo.queue()
-    demo.launch(share=True)
+    demo.launch(share=args.share,
+                server_name=args.host,
+                server_port=args.port)
