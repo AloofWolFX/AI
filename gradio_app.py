@@ -39,7 +39,7 @@ def create_interface():
             with gr.Column(scale=4):
                 question_input = gr.Textbox(
                     label="请输入数学问题",
-                    placeholder="例如：which number is larger? 9.11 or 9.9?",
+                    placeholder="例如：哪个数字更大? 是 9.11 还是 9.9?",
                     lines=2
                 )
             with gr.Column(scale=1):
