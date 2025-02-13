@@ -7,10 +7,11 @@ from huggingface_hub import snapshot_download
 # 模型配置
 model_name = "Satori-reasoning/Satori-7B-Round2"
 local_path = os.path.join(os.path.abspath(
-    "."), "model", "HuggingFace")
+    "/"), "model", "HuggingFace")
+model_path = os.path.join(local_path, model_name)
 
 # 检查模型是否已下载，如果没有则下载
-if not os.path.exists(os.path.join(local_path, model_name)):
+if not os.path.exists(model_path):
     print(f"正在下载模型 {model_name} 到 {local_path}...")
     snapshot_download(
         repo_id=model_name,
@@ -23,7 +24,7 @@ else:
 
 # 全局LLM实例
 llm = LLM(
-    model=model_name,
+    model=model_path,
     trust_remote_code=True,
     tensor_parallel_size=1,
     download_dir=local_path
