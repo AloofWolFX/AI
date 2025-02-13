@@ -1,6 +1,8 @@
 # Satori-7B-Round2-WebUI
 
-本项目基于 Satori-7B-Round2 推理模型和 Gradio API 提供了一个友好的 Web UI，方便快速部署和体验模型的推理能力。
+`Satori-7B-Round2` 模型参数量仅 7B 就在数学推理能力上超越 70B 和一众小型模型，MIT与哈佛基于`行动-思维链（COAT）`机制训练的 Satori-7B-Round2 推理模型。
+
+本项目基于 Satori-7B-Round2 推理模型和 Gradio API 提供了一个友好的 Web UI，方便快速部署实例后立即体验 Satori-7B-Round2 模型的推理能力。
 
 ## Satori-7B-Round2 是什么
 
@@ -16,7 +18,7 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 - 自我反思与纠错能力：Satori 在推理过程中能自我反思并进行自我纠错，提升了推理的准确率。
 - 强化学习优化：采用行动-思维链（COAT）机制和两阶段训练框架，包括小规模格式调优和大规模自我优化，主要依靠强化学习（RL）实现先进的推理性能。
 
-## Satori-7B-Round2 的技术原理
+## Satori-7B-Round2 的技术原理 —— COAT
 
 ![Satori](https://s2.loli.net/2025/02/11/mUiAHC4s8yql51z.png)
 
