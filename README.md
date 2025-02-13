@@ -2,8 +2,6 @@
 
 本项目基于 Satori-7B-Round2 推理模型和 Gradio API 提供了一个友好的 Web UI，方便快速部署和体验模型的推理能力。
 
-- **GitHub 仓库**：<https://github.com/Airmomo/satori-7b-round2-webui>
-
 ## Satori-7B-Round2
 
 Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参数大型语言模型，专注于提升推理能力。基于 Qwen-2.5-Math-7B，Satori 通过小规模的格式微调和大规模的增强学习实现了先进的推理性能。
