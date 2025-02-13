@@ -10,7 +10,7 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 
 该模型引入了行动-思维链（COAT）机制，通过特殊的元动作标记引导模型进行推理。Satori 在数学推理和跨领域任务中表现出色，展现了优异的泛化能力。
 
-## Satori-7B-Round2 的核心功能
+### Satori-7B-Round2 的核心功能
 
 - 自回归搜索能力：Satori 通过自我反思和探索新策略，能进行自回归搜索，无需外部指导即可完成复杂的推理任务。
 - 数学推理：Satori 在数学推理基准测试中取得了最佳成绩，展现出卓越的推理能力。
@@ -18,7 +18,7 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 - 自我反思与纠错能力：Satori 在推理过程中能自我反思并进行自我纠错，提升了推理的准确率。
 - 强化学习优化：采用行动-思维链（COAT）机制和两阶段训练框架，包括小规模格式调优和大规模自我优化，主要依靠强化学习（RL）实现先进的推理性能。
 
-## Satori-7B-Round2 的技术原理 —— COAT
+### Satori-7B-Round2 的技术原理 —— COAT
 
 ![Satori](https://s2.loli.net/2025/02/11/mUiAHC4s8yql51z.png)
 
@@ -30,6 +30,20 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 - **两阶段训练框架**：
   - **小规模格式调优阶段**：在少量推理轨迹示例的小数据集上进行微调，使模型熟悉 COAT 推理格式。
   - **大规模自我优化阶段**：通过强化学习（RL）优化模型性能，采用重启与探索（RAE）技术，提升模型的自回归搜索能力。
+
+### Satori-7B-Round2 的数学推理能力基准
+
+在数学推理中，Satori-7B-Round2 的表现已达到 SOTA 性能，并优于使用相同基础模型（Qwen-2.5-Math-7B）的 Qwen-2.5-Math-7B-Instruct。甚至大幅度超越了 Llama-3.1-70B-Instruct 这个参数量比它还大十倍的模型。
+
+![Satori_math_reasoning](https://s2.loli.net/2025/02/13/rIdankjoPZJSNwe.png)
+
+### Satori-7B-Round2 的通用领域推理基准
+
+仅在数学数据集上训练的 Satori-7B-Round2 在跨多个领域外的推理基准测试中表现出强大的迁移能力，并且大幅超越了 Qwen-2.5-Math-7B-Instruct。
+
+尽管没有在其他领域进行训练，Satori-7B-Round2 的性能与或超过了其他小型通用指令模型，与 Llama-3.1-70B-Instruct 等大型模型不相上下。
+
+![Satori_general_domain_reasoning](https://s2.loli.net/2025/02/13/k6B2KLUpwhtSmEj.png)
 
 ## Satori-7B-Round2-WebUI 的运行界面
 
