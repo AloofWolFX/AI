@@ -49,68 +49,6 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 
 ![Satori-7B-Gradio](https://s2.loli.net/2025/02/11/VwUoqjbtGizNyMm.png)
 
-## 一键部署 Satori-7B-Round2-WebUI
-
-在这里特别感谢 `UCloud` 优云智算提供的 GPU 算力支持！让项目得到了快速的部署和调试运行。
-
-### UCloud 介绍
-
-![UCloud](https://s2.loli.net/2025/02/13/dDV4fosLACQgpmJ.png)
-
-> 优云智算是 UCloud 优刻得的GPU算力租赁平台，专注于为用户提供灵活的算力资源。支持按天、按小时短期租赁及包月长期租赁，满足各类需求。
-> 
-> 结合丰富的公共镜像社区，优云智算提供多种预配置的容器镜像，如LLamaFactory、SD-webUI 和 LLM 等，实现一键部署，5分钟就能快速上手 AI，助力用户快速启动和扩展项目。
-
-### 通过镜像一键部署实例
-
-#### 1. 使用该镜像创建实例
-
-首先，在`镜像发布页`可以查看到我制作完成并分享到平台的实例镜像，通过右侧的`使用该镜像创建实例`可以快速创建一个实例。
-
-**Satori-7B-Round2-WebUI 镜像发布页**：<https://www.compshare.cn/images-detail?ImageID=compshareImage-18czitmv51ov&referral_code=4sOb83sEXe4BLkKYqw9G4P&ytag=GPU_hych_Lcsdn_csdn_display>
-
->【算力福利速递】通过镜像发布页的链接注册可以获得 40 算力金，免费体验 20 小时顶配 4090 显卡，企业或高校认证后有 95 折和额外 10 元算力金。
-
-![Satori_mirror](https://s2.loli.net/2025/02/13/jak4KsMnvJ5Ftz1.png)
-
-#### 2. 部署GPU实例
-
-Satori-7B-Round2 模型的参数量为 `7B` 大小，这里`推荐配置 4090 单卡`。也可按需选择配置后再`立即部署`。
-
-![Satori_mirror_load](https://s2.loli.net/2025/02/13/MtHOD7AWsVSKFbI.png)
-
-#### 3. 启动实例
-
-稍等片刻后，实例就会自动创建并启动，通过查看`实例列表`可查看实例的运行状态，并支持随时关闭或启用。
-
-![UCloud_contorl](https://s2.loli.net/2025/02/13/Jw9BvKVS5POXW2k.png)
-
-实例同时提供了一个 `JupyterLab` 应用作为交互式开发环境，它提供了更现代化和灵活的用户界面，方便我们继续后续的步骤。
-
-![UCloud_JupyterLab](https://s2.loli.net/2025/02/13/utpxBdQqGCMOZSA.png)
-
-#### 4. 运行 WebUI 服务
-
-启动实例后，你可以通过 `JupyterLab` 应用的终端输入以下命令来快速启动服务：
-```bash
-python gradio_app.py --share --host 0.0.0.0 --port 7860
-```
-
-WebUI 服务默认通过 `7860` 端口进行访问，镜像已经配置了端口转发，你可以直接通过公网访问。
-
-- 参数说明：
-
-| 参数         | 说明                           | 示例命令                                      |
-|--------------|-------------------------------|----------------------------------------------|
-| `--port`     | 指定应用程序运行的端口号       | `python gradio_app.py --port 7860`           |
-| `--share`    | 允许通过公网访问应用程序       | `python gradio_app.py --share`               |
-| `--host`     | 指定应用程序绑定的主机地址     | `python gradio_app.py --host 0.0.0.0`        |
-
-**镜像已内置模型**，运行时会检测本地模型路径，不用再重新配置和下载模型，程序会自动启动推理引擎和 Gradio App 并输出访问地址，大致如下：
-```raw
-* Running on local URL:  http://0.0.0.0:7860
-* Running on public URL: https://62c32ff6bbd7ca4d2f.gradio.live
-```
 
 ## 手动本地部署 Satori-7B-Round2-WebUI
 
