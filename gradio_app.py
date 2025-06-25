@@ -27,7 +27,7 @@ def process_question_stream(question: str, history: list = None) -> Iterator[tup
 
 def create_interface():
     with gr.Blocks() as demo:
-        gr.Markdown("# Satori-7B 数学问题求解器")
+        gr.Markdown("# Satori-7B Math Problem Solver")
 
         chatbot = gr.Chatbot(
             label="对话历史",
