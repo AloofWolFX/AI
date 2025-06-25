@@ -5,7 +5,7 @@ import re
 
 
 def extract_final_answer(text: str) -> str:
-    # 使用正则表达式匹配\boxed{...}中的内容
+    # use regular expression to match \boxed{...} content
     match = re.search(r'\\boxed{([^}]*)}', text)
     if match:
         return match.group(1)
