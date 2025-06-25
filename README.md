@@ -55,7 +55,7 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 #### 1. 克隆项目到本地
 ```bash
 git clone https://github.com/AloofWolFX/AI.git
-cd satori-7b-round2-webui
+cd AI
 ```
 
 #### 2. 创建虚拟环境：
