@@ -54,7 +54,7 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 
 #### 1. 克隆项目到本地
 ```bash
-git clone https://github.com/Airmomo/satori-7b-round2-webui.git
+git clone https://github.com/AloofWolFX/AI.git
 cd satori-7b-round2-webui
 ```
 
@@ -99,6 +99,3 @@ python gradio_app.py
 ## 资源
 
 - **HuggingFace 仓库**：<https://huggingface.co/Satori-reasoning/Satori-7B-Round2>
-- **Satori-7B-Round2-WebUI 镜像发布页**：<https://www.compshare.cn/images-detail?ImageID=compshareImage-18czitmv51ov&referral_code=4sOb83sEXe4BLkKYqw9G4P&ytag=GPU_hych_Lcsdn_csdn_display>
-
->【算力福利速递】通过镜像发布页的链接注册可以获得 40 算力金，免费体验 20 小时顶配 4090 显卡，企业或高校认证后有 95 折和额外 10 元算力金。
