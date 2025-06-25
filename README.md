@@ -82,7 +82,7 @@ pip install torch vllm gradio tqdm
 你可以通过以下方式启动应用：
 - 默认本地访问：
 ```bash
-python gradio_app.py
+python gradio_app.py --share --host 0.0.0.0 --port 7860
 ```
 
 默认配置：
