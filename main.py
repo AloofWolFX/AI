@@ -4,25 +4,25 @@ import torch
 from vllm import LLM, SamplingParams
 from huggingface_hub import snapshot_download
 
-# 模型配置
+# Model configuration
 model_name = "Satori-reasoning/Satori-7B-Round2"
 local_path = os.path.join(os.path.abspath(
     "/"), "model", "HuggingFace")
 model_path = os.path.join(local_path, model_name)
 
-# 检查模型是否已下载，如果没有则下载
+# Check if the model has been downloaded, if not download it
 if not os.path.exists(model_path):
-    print(f"正在下载模型 {model_name} 到 {local_path}...")
+    print(f"Downloading model {model_name} to {local_path}...")
     snapshot_download(
         repo_id=model_name,
         local_dir=os.path.join(local_path, model_name),
         local_dir_use_symlinks=False
     )
-    print("模型下载完成！")
+    print("Model download complete!")
 else:
-    print(f"模型已存在于 {local_path}，跳过下载")
+    print(f"Model already exists in {local_path}，Skip download")
 
-# 全局LLM实例
+# Global LLM Instance
 llm = LLM(
     model=model_path,
     trust_remote_code=True,
@@ -46,6 +46,6 @@ def generate(question_list):
 
 
 def prepare_prompt(question, history=None):
-    # 添加当前问题
-    prompt = f"请解答以下数学问题：\n{question}\n\n请用严谨的数学推理过程来解答这个问题，并在最后用\\boxed{{}}标注最终答案。"
+    # Add current question
+    prompt = f"Please solve the following math problems:\n{question}\n\nPlease use rigorous mathematical reasoning to answer this question and mark the final answer with \\boxed{{}} at the end."
     return prompt
