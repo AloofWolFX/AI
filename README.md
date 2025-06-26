@@ -50,7 +50,7 @@ Despite not being trained on other domains, Satori-7B-Round2 performs as well as
 
 ## Satori-7B-Round2-WebUI operating interface
 
-![Satori-7B-Gradio](C:\Users\User\Desktop\satori.png)
+![Satori-7B-Gradio](https://ibb.co/PvJCdhgm)
 
 
 ## Manual local deployment Satori-7B-Round2-WebUI
