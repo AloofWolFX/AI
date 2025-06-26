@@ -1,51 +1,54 @@
 # Satori-7B-Round2-WebUI
 
-`Satori-7B-Round2` 模型参数量仅 7B 就在数学推理能力上超越 70B 和一众小型模型，MIT与哈佛基于`行动-思维链（COAT）`机制训练的 Satori-7B-Round2 推理模型。
+`Satori-7B-Round2`  model has only 7B parameters, but its mathematical reasoning ability surpasses 70B and a number of small models. The Satori-7B-Round2 reasoning model trained by MIT and Harvard based on ` Chain of Actions and Thoughts` mechanism. 
 
-本项目基于 Satori-7B-Round2 推理模型和 Gradio API 提供了一个友好的 Web UI，方便快速部署实例后立即体验 Satori-7B-Round2 模型的推理能力。
+This project provides a friendly Web UI based on the Satori-7B-Round2 inference model and Gradio API, which allows you to quickly deploy an instance and immediately experience the inference capabilities of the Satori-7B-Round2 model. 
 
-## Satori-7B-Round2 是什么
+## What is Satori-7B-Round2
 
-Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参数大型语言模型，专注于提升推理能力。基于 Qwen-2.5-Math-7B，Satori 通过小规模的格式微调和大规模的增强学习实现了先进的推理性能。
+Satori-7B-Round2 is a 7B parameter large language model launched by researchers from **MIT, Harvard University** and other institutions, focusing on improving reasoning capabilities. Based on Qwen-2.5-Math-7B, Satori achieves advanced reasoning performance through small-scale format fine-tuning and large-scale reinforcement learning.
 
-该模型引入了行动-思维链（COAT）机制，通过特殊的元动作标记引导模型进行推理。Satori 在数学推理和跨领域任务中表现出色，展现了优异的泛化能力。
 
-### Satori-7B-Round2 的核心功能
+The model introduces the Chain of Actions and Thoughts (COAT) mechanism, which guides the model to reason through special meta-action tags. Satori performs well in mathematical reasoning and cross-domain tasks, showing excellent generalization ability.
 
-- 自回归搜索能力：Satori 通过自我反思和探索新策略，能进行自回归搜索，无需外部指导即可完成复杂的推理任务。
-- 数学推理：Satori 在数学推理基准测试中取得了最佳成绩，展现出卓越的推理能力。
-- 跨领域任务：除了数学领域，Satori 在逻辑推理、代码推理、常识推理和表格推理等跨领域任务中也表现出色，具有很强的泛化能力。
-- 自我反思与纠错能力：Satori 在推理过程中能自我反思并进行自我纠错，提升了推理的准确率。
-- 强化学习优化：采用行动-思维链（COAT）机制和两阶段训练框架，包括小规模格式调优和大规模自我优化，主要依靠强化学习（RL）实现先进的推理性能。
+### Core features of Satori-7B-Round2
 
-### Satori-7B-Round2 的技术原理 —— COAT
+- Autoregressive search capability: Satori can perform autoregressive search by self-reflection and exploring new strategies, completing complex reasoning tasks without external guidance. 
+- Mathematical Reasoning: Satori achieved top scores on the mathematical reasoning benchmark test, demonstrating excellent reasoning skills. 
+- Cross-domain tasks: In addition to mathematics, Satori also performs well in cross-domain tasks such as logical reasoning, code reasoning, common sense reasoning, and table reasoning, and has strong generalization ability.
+- Self-reflection and error correction ability: Satori can self-reflect and self-correct during the reasoning process, which improves the accuracy of reasoning.
+- Reinforcement Learning Optimization: It adopts the Chain of Actions and Thoughts (COAT) mechanism and a two-stage training framework, including small-scale format tuning and large-scale self-optimization, and mainly relies on reinforcement learning (RL) to achieve advanced reasoning performance.
+
+
+### Technical principle of Satori-7B-Round2——COAT
 
 ![Satori](https://s2.loli.net/2025/02/11/mUiAHC4s8yql51z.png)
 
-- **行动-思维链（COAT）推理**：
-  - **继续推理**（<|continue|>）：鼓励模型生成下一个中间步骤。
-  - **反思**（<|reflect|>）：验证之前的推理步骤是否正确。
-  - **探索替代方案**（<|explore|>）：识别推理中的漏洞并探索新的解决方案。
+- **Chain of Action-Thought (COAT) Reasoning**：
+  - **Continue reasoning**（<|continue|>）：Encourage the model to generate the next intermediate step. 
+  - **Reflect**（<|reflect|>）：Verify whether the previous reasoning steps are correct.
+  - **Explore alternatives**（<|explore|>）：Identify holes in reasoning and explore new solutions. 
 
-- **两阶段训练框架**：
-  - **小规模格式调优阶段**：在少量推理轨迹示例的小数据集上进行微调，使模型熟悉 COAT 推理格式。
-  - **大规模自我优化阶段**：通过强化学习（RL）优化模型性能，采用重启与探索（RAE）技术，提升模型的自回归搜索能力。
+- **Two-stage training framework**：
+  - **Small-scale format tuning phase**：Fine-tune on a small dataset with a small number of inference trajectory examples to familiarize the model with the COAT inference format. 
+  - **Large-scale self-optimization stage**：Optimize model performance through reinforcement learning (RL) and use restart and exploration (RAE) technology to improve the model's autoregressive search capabilities.
 
-### Satori-7B-Round2 的数学推理能力基准
 
-在数学推理中，Satori-7B-Round2 的表现已达到 SOTA 性能，并优于使用相同基础模型（Qwen-2.5-Math-7B）的 Qwen-2.5-Math-7B-Instruct。甚至大幅度超越了 Llama-3.1-70B-Instruct 这个参数量比它还大十倍的模型。
+### Mathematical Reasoning Benchmark of Satori-7B-Round2
+
+In mathematical reasoning, Satori-7B-Round2 has achieved SOTA performance and outperformed Qwen-2.5-Math-7B-Instruct, which uses the same basic model (Qwen-2.5-Math-7B). It even significantly surpassed Llama-3.1-70B-Instruct, a model with ten times more parameters.
 
 ![Satori_math_reasoning](https://s2.loli.net/2025/02/13/rIdankjoPZJSNwe.png)
 
-### Satori-7B-Round2 的通用领域推理基准
+### Satori-7B-Round2 general domain reasoning benchmark
 
-仅在数学数据集上训练的 Satori-7B-Round2 在跨多个领域外的推理基准测试中表现出强大的迁移能力，并且大幅超越了 Qwen-2.5-Math-7B-Instruct。
+Satori-7B-Round2, trained only on the mathematics dataset, shows strong transfer capabilities across multiple out-of-domain reasoning benchmarks and significantly surpasses Qwen-2.5-Math-7B-Instruct.
 
-尽管没有在其他领域进行训练，Satori-7B-Round2 的性能与或超过了其他小型通用指令模型，与 Llama-3.1-70B-Instruct 等大型模型不相上下。
+Despite not being trained on other domains, Satori-7B-Round2 performs as well as or better than other small general-purpose instruction models and is comparable to larger models such as Llama-3.1-70B-Instruct.
 
 ![Satori_general_domain_reasoning](https://s2.loli.net/2025/02/13/k6B2KLUpwhtSmEj.png)
 
-## Satori-7B-Round2-WebUI 的运行界面
+## Satori-7B-Round2-WebUI operating interface
 
 ![Satori-7B-Gradio](https://s2.loli.net/2025/02/11/VwUoqjbtGizNyMm.png)
 
