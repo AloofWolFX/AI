@@ -50,48 +50,47 @@ Satori-7B-Round2 是由**MIT、哈佛大学**等机构研究者推出的 7B 参�
 ![Satori-7B-Gradio](https://s2.loli.net/2025/02/11/VwUoqjbtGizNyMm.png)
 
 
-## 手动本地部署 Satori-7B-Round2-WebUI
+## Manual local deployment Satori-7B-Round2-WebUI
 
-#### 1. 克隆项目到本地
+#### 1. Clone the project to local
 ```bash
 git clone https://github.com/AloofWolFX/Satori-7b-round2-webui.git
 cd Satori-7b-round2-webui
 ```
 
-#### 2. 创建虚拟环境：
+#### 2. Create a virtual environment:
 ```bash
 python -m venv myenv
 ```
 
-#### 3. 激活虚拟环境：
+#### 3. Activate the virtual environment:
 ```bash
 source myenv/bin/activate
 ```
 
-#### 4. 安装依赖包：
+#### 4. Install dependency packages:
 ```bash
 pip install torch vllm gradio tqdm
 ```
 
-#### 5. 运行程序：
+#### 5. Run the program:
 
-你可以通过以下方式启动应用：
-- 默认本地访问：
+You can start the application in the following ways:
 ```bash
 python gradio_app.py --share --host 0.0.0.0 --port 7860
 ```
 
-默认配置：
-- 主机地址：127.0.0.1
-- 端口：7860
-- 仅允许本地访问
+Default configuration:
+- Host address: 127.0.0.1
+- Port: 7860
+- Only local access is allowed
 
-程序会自动帮你下载模型文件，下载完成后会自动启动推理引擎和 Gradio App。最终会输出 Gradio App 的访问地址，大致如下：
+
+The program will automatically download the model file for you, and after the download is complete, it will automatically start the inference engine and Gradio App. Finally, the access address of Gradio App will be output, which is roughly as follows:
 ```raw
-* Running on local URL:  http://127.0.0.1:7860
 * Running on public URL: https://62c32ff6bbd7ca4d2f.gradio.live
 ```
 
-## 资源
+## Resource
 
-- **HuggingFace 仓库**：<https://huggingface.co/Satori-reasoning/Satori-7B-Round2>
+- **HuggingFace **：<https://huggingface.co/Satori-reasoning/Satori-7B-Round2>
