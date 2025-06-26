@@ -65,10 +65,6 @@ python -m venv myenv
 
 #### 3. 激活虚拟环境：
 ```bash
-# Windows
-myenv\Scripts\activate
-
-# macOS/Linux
 source myenv/bin/activate
 ```
 
